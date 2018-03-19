@@ -62,7 +62,6 @@ table {
 
 </tr>
 
-
 <?php
 session_start();
 echo "Dzisiejsza data: ";
