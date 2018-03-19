@@ -22,7 +22,7 @@ session_start();
 <html lang = "pl">
 <head>
 	<meta charser="utf-8"/>
-	<meta http-eqiuv="X-UA-Compatibile" content="IE=edge,chrome=1"/>
+	<meta http-eqiuv="Content-Language" content="pl"/>
 <style>
 header, footer {
     padding: 1em;
@@ -60,7 +60,7 @@ table, th, td {
 </header>
 
 <nav>
-
+	<p>Zaloguj się, jeśli chcesz zarezerwować miejsce:</p>
 	<form action="zaloguj.php" method="post">
 	Login: <br/><input type="text" name="login"/><br/>
 	Hasło: <br/><input type="password" name="haslo"/><br/><br/>
@@ -87,47 +87,32 @@ table, th, td {
 
   <h2>COCO</h2>
   
-  <table>
-  <tr>
-
-    <th>Czas Trwania</th>
-	<th>Reżyser</th>
-	<th>Rok wydania</th>
-	<th>Gatunek</th>
-	<th>Czas Trwania</th>
-	<th>Ograniczenia_wiekowe</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-  </tr>
-</table>
+	<p> Bohaterem filmu jest Miguel.
+  W jego rodzinie od pokoleń muzyka jest zakazana. 
+  Jednak Miguel marzy, by pójść w ślady swojego idola, 
+  wielkiego muzyka Ernesta de la Cruza.
+  Zdesperowany chce udowodnić światu swój talent,
+  a to – za sprawą serii przedziwnych wydarzeń – 
+  -doprowadzi go do niezwykle kolorowej Krainy Umarłych. 
+  Po drodze spotyka uroczego oszusta Hectora. 
+  Wspólnie spróbują rozwikłać tajemnicę z przeszłości rodziny Miguela...
+  </p>
 
 <h2>BONE TOMAHAWK</h2>
   
-  <table>
-  <tr>
-
-    <th>Czas Trwania</th>
-	<th>Reżyser</th>
-	<th>Rok wydania</th>
-	<th>Gatunek</th>
-	<th>Czas Trwania</th>
-	<th>Ograniczenia_wiekowe</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-  </tr>
-</table>
+  <p>
+ Dziki Zachód, koniec XIX wieku. 
+ Purvis (David Arquette) i Buddy napadają, 
+ zabijają i okradają śpiących podróżnych. 
+ Uciekając przed pościgiem, bezczeszczą groby niebezpiecznego plemienia. 
+ Tubylcy w odwecie docierają do pobliskiego miasteczka Bright Hope,
+ gdzie został zatrzymany w areszcie Purvis, 
+ a następnie porywają jego i kilka innych osób. 
+ Szeryf Franklin Hunt (Kurt Russell) organizuje pościg,
+ w skład którego wchodzą: jego podstarzały zastępca (Richard Jenkins),
+ lokalny dandys (Matthew Fox) oraz mąż jednej z porwanych (Patrick Wilson).
+ Ich przeciwnika boją się nawet inni Indianie... 
+ </p>
 
 </article>
 </aside>
