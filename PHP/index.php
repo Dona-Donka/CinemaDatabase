@@ -66,7 +66,10 @@ table, th, td {
 	Hasło: <br/><input type="password" name="haslo"/><br/><br/>
 	<input type="submit" value="Zaloguj sie"/>
 	</form>
+	
 
+	<a href = "rejestracja.php">Rejestracja - załóż konto!</a>
+	<br></br>
 <?php
 
 	if(isset($_SESSION['blad']))
