@@ -171,5 +171,10 @@ article {
 
 	<input type="submit" value="Zarejestruj się" />
 </form>
+
+<form action="index.php" method="post">
+<input type="submit" value="Powrót"/>
+</form>
+
 </body>
 </html>
