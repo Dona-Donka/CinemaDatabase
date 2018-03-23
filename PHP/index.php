@@ -76,11 +76,12 @@ table, th, td {
 ?>
 	<form action="rejestracja.php"method="post">
 	<input type="submit"value="Załóż konto"/>
-
+	</form>
 
 <form action="repertuar.php"method="post">
 <br><input type = "submit"value = "REPERTUAR"/></br>
-
+</form>
+	
 </nav>
 <aside>
 <article class="article">
