@@ -65,16 +65,16 @@ table {
 <?php
 session_start();
 echo "Dzisiejsza data: ";
-echo date("m.d.y");
+echo date("d.m.y");
 
 	while($filmy=mysqli_fetch_assoc($records))
 {
 	echo "<tr>";
-	echo "<td>".date("m.d.y")."</td>";
+	echo "<td>".date("d.m.y")."</td>";
 	echo "<td>17.00</td>";
-	echo"<td>".$filmy['Tytul']."</td>";
+	echo "<td>".$filmy['Tytul']."</td>";
 	echo "<td>".$filmy['Gatunek']."</td>";
-	echo "<td>".$filmy['Ograniczenia_wiekowe']."</td>";
+	echo "<td>".$filmy['Ograniczenia wiekowe']."</td>";
 	echo"</tr>";
 	
 }
