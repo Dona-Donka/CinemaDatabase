@@ -9,12 +9,11 @@
 	{
 		//Walidacja Udana
 		$wszystko_OK=true;
-<<<<<<< HEAD
+
         
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
-=======
->>>>>>> d26be9f9a0e83b52493f6437acb65a2db9fc33be
+
 		
 		//Sprawdzamy popr email
 		$email = $_POST['email'];
@@ -36,11 +35,7 @@
 			$_SESSION['e_haslo'] = "Hasło musi zawierać się w 8-20 znakach";
 		}
 
-<<<<<<< HEAD
-		if($haslo1!=$haslo2)
-=======
-		if($haslo1!=haslo2)
->>>>>>> d26be9f9a0e83b52493f6437acb65a2db9fc33be
+        if($haslo1!=haslo2)
 		{
 			$wszystko_OK=false;
 			$_SESSION['e_haslo'] = "Podane hasła różnią się";
@@ -71,18 +66,11 @@
 			{
 			//Czy email już istnieje
 			
-<<<<<<< HEAD
+
 			$rezultat = $polaczenie->query("SELECT IdKlienta FROM Klienci WHERE Adres_email='$email'");
 			if(!$rezultat) throw new Exception($polaczenie->error);
 			
 			if($rezultat->num_rows>0)
-=======
-			$rezultat = $polaczenie->query("SELECT IdKlienta FROM klienci WHERE Adres_email='$email'");
-			if(!$rezultat) throw new Exception($polaczenie->error);
-			
-			$ile_takich_maili = $rezultat->num_rows;
-			if($ile_takich_maili>0)
->>>>>>> d26be9f9a0e83b52493f6437acb65a2db9fc33be
 				{
 					$wszystko_OK=false;
 					$_SESSION['e_mail']="Istnieje już konto o podanym adresie e-mail";
@@ -91,11 +79,7 @@
 		if($wszystko_OK==true)
 		{
 		//Dodawanie klienta do bazy
-<<<<<<< HEAD
 					if($polaczenie->query("INSERT INTO Klienci VALUES(NULL,'$imie','$nazwisko','$email','$haslo1')"))
-=======
-					if($polaczenie->query("INSERT INTO klienci VALUES(NULL,'$imie','$nazwisko','$email','$haslo')"))
->>>>>>> d26be9f9a0e83b52493f6437acb65a2db9fc33be
 						{
 							$_SESSION['udanarejestracja']=true;
 							header('Location: strona_witaj.php');
