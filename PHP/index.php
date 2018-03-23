@@ -68,19 +68,17 @@ table, th, td {
 	</form>
 	
 
-	<a href = "rejestracja.php">Rejestracja - załóż konto!</a>
-	<br></br>
+
 <?php
 
 	if(isset($_SESSION['blad']))
 	echo $_SESSION['blad'];
 ?>
-
+	<form action="rejestracja.php"method="post">
 	<input type="submit"value="Załóż konto"/>
 
 
 <form action="repertuar.php"method="post">
-
 <br><input type = "submit"value = "REPERTUAR"/></br>
 
 </nav>
