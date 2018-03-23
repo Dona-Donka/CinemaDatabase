@@ -37,7 +37,7 @@
 		}
 
 		//Haszowanie hasła
-		$haslo_hash = password_hash($haslo1,PASSWORD_DEFAULT);
+		//$haslo_hash = password_hash($haslo1,PASSWORD_DEFAULT);
 
 		//Spr odz akceptacji regulaminu
 		if(!isset($_POST['regulamin']))
@@ -45,11 +45,55 @@
 			$wszystko_OK=false;
 			$_SESSION['e_regulamin'] = "Musisz zaakceptować regulamin";
 		}
+		
+		require_once "connect.php";
+		//Raportowanie błędów poprzez wyjątki - nie ost.
+		mysqli_report(MYSQLI_REPORT_STRICT);
+		
+		try
+		{
+			$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+			if($polaczenie ->connect_errno!=0)
+			{
+				throw new Exception(mysqli_connet_errno());
+			}
+			else
+			{
+			//Czy email już istnieje
+			
+			$rezultat = $polaczenie->query("SELECT IdKlienta FROM klienci WHERE Adres_email='$email'");
+			if(!$rezultat) throw new Exception($polaczenie->error);
+			
+			$ile_takich_maili = $rezultat->num_rows;
+			if($ile_takich_maili>0)
+				{
+					$wszystko_OK=false;
+					$_SESSION['e_mail']="Istnieje już konto o podanym adresie e-mail";
+				}
 
 		if($wszystko_OK==true)
 		{
-			echo "Zostałeś zarejestrowany"; exit();
+		//Dodawanie klienta do bazy
+					if($polaczenie->query("INSERT INTO klienci VALUES(NULL,'$imie','$nazwisko','$email','$haslo')"))
+						{
+							$_SESSION['udanarejestracja']=true;
+							header('Location: strona_witaj.php');
+						}
+					else
+					{
+						throw new Exception($polaczenie->error);
+					}
+				}
+			$polaczenie->close();
+			}
 		}
+		catch(Exception $e)
+		{
+			echo '<span style="color:red;">Błąd servera! Przepraszamy za niedogodności i prosimy o rejestrację w innym terminie</span';
+			echo '<br/>Informacja developerska: '.$e;
+		}
+
+		
 	}
 	//<div class="g-recaptcha" data-sitekey="6LfIPRMTAAAAAPp0sKo5tCbQjTeELq2E9iaGVzZ5"></div>
 ?>
@@ -61,7 +105,21 @@
 	<meta http-eqiuv="Content-Language" content="pl"/>
 	<title>Kino (nazwa) - zarejestruj się!</title>
 <style>
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
 
+article {
+	float: center;
+    margin-left: 300px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
 </style>
 </head>
 <body>
