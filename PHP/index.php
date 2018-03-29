@@ -56,7 +56,7 @@ table, th, td {
 <body>
 
 <header>
-	<h1 style="font-seize:80px;">KINO (jakaś nazwa)</h1><br/><br/>
+	<h1 style="font-seize:80px;">KINO KONESER</h1><br/><br/>
 </header>
 
 <nav>
@@ -114,6 +114,19 @@ table, th, td {
  w skład którego wchodzą: jego podstarzały zastępca (Richard Jenkins),
  lokalny dandys (Matthew Fox) oraz mąż jednej z porwanych (Patrick Wilson).
  Ich przeciwnika boją się nawet inni Indianie... 
+ </p>
+
+<h2>SICARIO</h2>
+  
+  <p>
+ Młoda agentka FBI Kate Macer przyłącza się do supertajnej akcji CIA
+ mającej na celu pojmanie szefa wielkiego meksykańskiego kartelu narkotykowego.
+ Macer stopniowo poznaje szczegóły operacji, która często ociera się
+ o granicę prawa i moralności, prowadząc do najgłębszych czeluści przestępczego piekła.
+ Przewodnikiem po jego kolejnych kręgach będzie dla Macer tajemniczy 
+ współpracownik CIA o meksykańskim pochodzeniu, zwany "konsultantem",
+ który jak się okaże ma dla całej akcji kluczowe znaczenie. 
+ Jego prawdziwa tożsamość będzie dla Macer największym szokiem.
  </p>
 
 </article>
