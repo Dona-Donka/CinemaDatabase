@@ -81,6 +81,10 @@ table, th, td {
 <form action="repertuar.php"method="post">
 <br><input type = "submit"value = "REPERTUAR"/></br>
 </form>
+
+<form action="cennik.php"method="post">
+<br><input type = "submit"value = "CENNIK"/></br>
+</form>
 	
 </nav>
 <aside>
@@ -116,7 +120,7 @@ table, th, td {
  Ich przeciwnika boją się nawet inni Indianie... 
  </p>
 
-<h2>SICARIO</h2>
+ <h2>SICARIO</h2>
   
   <p>
  Młoda agentka FBI Kate Macer przyłącza się do supertajnej akcji CIA

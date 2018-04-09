@@ -58,8 +58,8 @@ article,table {
 
 <?php
 session_start();
-echo "Dzisiejsza data: ";
-echo date("d.m.y");
+
+
 
 	while($seanse=mysqli_fetch_assoc($records))
 {
@@ -90,7 +90,7 @@ $polaczenie->close();
 
 <nav>
 <form action="index.php"method="post">
-<input type = "submit"value = "Powrót"/>
+<input type = "submit"value = "Strona główna"/>
 </form>
 
 <form action="filmy_na_ekranie.php"method="post">

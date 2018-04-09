@@ -1,15 +1,10 @@
 <?php
 	require_once"connect.php";
-
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
-		$sql = "SELECT * FROM filmy";
-	$records=mysqli_query($polaczenie, $sql);
-	date_default_timezone_set('UTC');
- 
+
+
 ?>
-
-
 
 	<!DOCTYPE HTML>
 	<html lang = "pl">
@@ -48,10 +43,13 @@ article,div {
 	<tr></tr>
 </header>
 
-<tr>
-<article>
+
+<!--<article>
 <div>
       <img src="sicario1.jpg" alt="sicario1" />
 </div>
-<article
-	</html>
+<article -->
+
+</body>
+</html>
+
