@@ -86,7 +86,7 @@ overflow: hidden;
         //tutaj ogarnać i poprawić!
         $desc_mjsc = mysqli_query($polaczenie, "UPDATE `seanse` SET `Ilosc_miejsc`=`Ilosc_miejsc`-1 WHERE `IdSeansu`='$seans';");
         
-        $desc_mjsc = mysqli_query($polaczenie, "UPDATE `miejsca` SET `Dostepnosc`='Niedostepne' WHERE `Rzad`=`$rzad` AND `Numer`=`$miejsce`;");
+        $desc_mjsc = mysqli_query($polaczenie, "UPDATE `miejsca` SET `Dostepnosc`='Niedostepne' WHERE `Rzad`='$rzad' AND `Numer`='$miejsce';");
         
         /*while($row = mysqli_fetch_array($desc_mjsc, MYSQLI_ASSOC))
          {
