@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	session_start();
 	
@@ -106,27 +106,15 @@
 			
 		?>
 
-			<form method = "post" >	
+            <form action="potwierdzenie.php" method="post">
 				<br></br>
+                <input type="hidden" name="nr_seansu" value="<?php echo $seans;?>"/>
+                <input type="hidden" name="rzad_mjsc" value="<?php echo $rzad;?>"/>
+                <input type="hidden" name="nr_mjsc" value="<?php echo $miejsce;?>"/>
 				<input type="submit" value="Potwierdzam zamówienie" name = "potwierdzenie">
 			</form>
-			
-	<?php		
-	
-		if(isset($_POST['potwierdzenie']))
-			{
-				$records_mjsc = "SELECT Ilosc_miejsc FROM seans WHERE IdSeansu = $seans";
-				//tutaj ogarnać i poprawić!
-				$desc_mjsc = mysqli_query($polaczenie, "UPDATE `seanse` SET `Ilosc_miejsc`=`Ilosc_miejsc`-1 WHERE `IdSeansu`='$seans';");
-				
-				/*while($row = mysqli_fetch_array($desc_mjsc, MYSQLI_ASSOC))
-				{
-					echo"Pozostało wolnych miejsc: $row[Ilosc_miejsc]";
-				}*/
-			}
 
 
-	?>
 	<article 
 
 	</body>

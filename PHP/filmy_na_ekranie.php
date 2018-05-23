@@ -1,50 +1,63 @@
 <?php
-	require_once"connect.php";
-	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
+	session_start();
+	
+	if(!isset($_SESSION['zalogowany']))
+	{
+		header('Location:filmy_na_ekranie.php');
+		exit();
 
-
+	}
+	
 ?>
 
-	<!DOCTYPE HTML>
-	<html lang = "pl">
-<head>
-<style>
-header, footer {
-    padding: 1em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center;
-}
+<?php
+	require_once"connect.php";
+	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+?>
 
-nav {
-    float: left;
-    max-width: 100px;
-    margin: 2;
-    padding: 2em;
-	background-color: white;
-}
+		<!DOCTYPE HTML>
+		<html lang = "pl">
+	<head>
+	<style>
+	header, footer {
+		padding: 1em;
+		color: white;
+		background-color: black;
+		clear: left;
+		text-align: center;
+	}
 
-article,div { 
+	nav {
+		float: left;
+		//max-width: 100px;
+		margin: 2;
+		padding: 2em;
+		background-color: white;
+	}
 
-    display: div;
-    margin-left: 100px;
-    overflow: hidden;
-}
+	article,div { 
 
-</style>
+		display: div;
+		padding: 1.7em;
+		margin-left: 400px;
+		overflow: hidden;
+	}
 
-<title>NA EKRANIE</title>
-</head>
+	</style>
 
-<header>
-	<h1 style="font-seize:80px;">NA EKRANIE</h1><br/><br/>
-	<tr></tr>
-</header>
+	<title>NA EKRANIE</title>
+	</head>
 
+	<header>
+		<h1 style="font-seize:80px;">NA EKRANIE</h1><br/><br/>
+		<tr></tr>
+	</header>
+	<nav>
 
-<form action="index.php"method="post">
+	<nav>
+
+	<form action="index.php"method="post">
 		<br><input type = "submit"value = "Strona główna"/></br>
 	</form>
 	<form action="repertuar.php"method="post">
@@ -78,7 +91,8 @@ article,div {
 			<input type="submit" value="Wyślij zamówienie">
 		</form>
 	
+	<article 
 
-</body>
-</html>
-
+	</body>
+	</html>
+	
