@@ -100,6 +100,11 @@ $polaczenie->close();
 <input type = "submit"value = "Rezerwacja"/>
 </form>
 
+<form action="dostepne_miejsca.php"method="post">
+	<input type="submit" value="Dostepne miejsca"/>
+	</form>
+	<br></br>
+
 </nav>
 </body>
 </html>

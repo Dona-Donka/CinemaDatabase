@@ -1,6 +1,8 @@
 ﻿<?php
 	require_once"connect.php";
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+	$sql = "SELECT * FROM miejsca";
+	$records=mysqli_query($polaczenie, $sql);
 
 ?>
 
@@ -33,11 +35,11 @@ article,div {
 
 </style>
 
-<title>NA EKRANIE</title>
+<title>MIEJSCA</title>
 </head>
 
 <header>
-	<h1 style="font-seize:80px;">CENNIK</h1><br/><br/>
+	<h1 style="font-seize:80px;">DOSTĘPNE MIEJSCA</h1><br/><br/>
 	<tr></tr>
 </header>
 
@@ -52,19 +54,36 @@ article,div {
 <table width="600" border = "1" cellpaddin ="1" cellspacing = "1">
 
 <article>
-
+<table width="250" border = "1" cellpaddin ="1" cellspacing = "1">
 <tr>
-<th>Normalny</th>
-<th>Ulgowy</th>
-<th>Studencki</th>
-<th>Senior</th>
-</tr>
+<th>Rząd</th>
+<th>Miejsce</th>
+<th>Dostępność</th>
 
-<td>12zł</td>
-<td>6zł</td>
-<td>10zł</td>
-<td>10zł</td>
+
+</tr>
 </article>
+
+<?php
+session_start();
+
+	while($miejsca=mysqli_fetch_assoc($records))
+{
+	echo "<tr>";
+	
+	echo "<td>".$miejsca['Numer']."</td>";
+	echo "<td>".$miejsca['Rzad']."</td>";
+	echo "<td>".$miejsca['Dostepnosc']."</td>";
+
+
+	echo"</tr>";
+	
+	/* echo "Dzisiejsza data: ";
+echo date("d.m.y"); */
+}
+
+$polaczenie->close();
+?>
 
 
 <nav>

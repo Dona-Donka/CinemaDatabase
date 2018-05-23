@@ -44,11 +44,40 @@ article,div {
 </header>
 
 
-<!--<article>
-<div>
-      <img src="sicario1.jpg" alt="sicario1" />
-</div>
-<article -->
+<form action="index.php"method="post">
+		<br><input type = "submit"value = "Strona główna"/></br>
+	</form>
+	<form action="repertuar.php"method="post">
+		<br><input type = "submit"value = "REPERTUAR"/></br>
+	</form>
+
+	<form action="filmy_na_ekranie.php"method="post">
+		<br><input type = "submit"value = "Filmy"/></br>
+	</form>
+	<form action="dostepne_miejsca.php"method="post">
+		<br><input type = "submit"value = "Dostępne miejsca"/></br>
+	</form> 
+	</nav>
+
+	<article>
+	<h1 Zamówienie biletu </h1>
+
+
+		<form action="zamowienie_miejsca.php" method="post">
+			Wpisz numer seansu:
+			<input type="int" name="nr_seansu" />
+			<br></br>
+			Wpisz rząd miejsca:
+			<input type="text" name="rzad_mjsc" />
+			<br></br>
+			Wpisz numer miejsca:
+			<input type="text" name="nr_mjsc" />
+			<br></br>
+		
+	
+			<input type="submit" value="Wyślij zamówienie">
+		</form>
+	
 
 </body>
 </html>

@@ -1,23 +1,22 @@
 <?php
+
+	session_start();
+	
+	if(!isset($_SESSION['zalogowany']))
+	{
+		header('Location:index.php');
+		exit();
+
+	}
+
+?>
+
+<?php
 $username = "root";
 $servername = "localhost";
 
 $conn = new mysqli($servername, $username);
-
-session_start();
-	
-	if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
-	{
-			header('Location:zal_glowna.php');
-			exit();
-	}
-
-	$sql = "SELECT * FROM filmy";
-	$records=mysqli_query($conn, $sql);
-	date_default_timezone_set('UTC');
-
 ?>
-
 <!DOCTYPE HTML>
 <html lang = "pl">
 <head>
@@ -55,37 +54,37 @@ table, th, td {
 </head>
 <body>
 
+
+<?php
+		echo"<p> Witaj ".$_SESSION['user'].'![<a href="wyloguj.php">Wyloguj się!</a>]</p>';
+?>
 <header>
 	<h1 style="font-seize:80px;">KINO KONESER</h1><br/><br/>
 </header>
 
 <nav>
-	<p>Zaloguj się, jeśli chcesz zarezerwować miejsce:</p>
-	<form action="zaloguj.php" method="post">
-	Login: <br/><input type="text" name="login"/><br/>
-	Hasło: <br/><input type="password" name="haslo"/><br/><br/>
-	<input type="submit" value="Zaloguj sie"/>
-	</form>
-	
-
 
 <?php
 
 	if(isset($_SESSION['blad']))
 	echo $_SESSION['blad'];
 ?>
-	<form action="rejestracja.php"method="post">
-	<input type="submit"value="Załóż konto"/>
-	</form>
 
 <form action="repertuar.php"method="post">
-<br><input type = "submit"value = "REPERTUAR"/></br>
+	<br><input type = "submit"value = "REPERTUAR"/></br>
 </form>
 
-<form action="cennik.php"method="post">
-<br><input type = "submit"value = "CENNIK"/></br>
+<form action="filmy_na_ekranie.php"method="post">
+	<br><input type = "submit"value = "Filmy"/></br>
+</form>
+
+<form action="filmy_na_ekranie.php"method="post">
+	<br><input type = "submit"value = "Rezerwacja"/></br>
 </form>
 	
+<form action="dostepne_miejsca.php"method="post">
+	<br><input type = "submit"value = "Dostępne miejsca"/></br>
+</form>
 </nav>
 <aside>
 <article class="article">
